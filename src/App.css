@@ -1,0 +1,201 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    .sortby-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .button {
+    display: flex;
+  }
+
+  #logo-vinted {
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto;
+  }
+  #search {
+    max-width: 100%;
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid 1px gray;
+    padding: 20px;
+  }
+
+  #register,
+  #connect {
+    height: 40px;
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  #deconnect {
+    background: #c2175b;
+    border: solid 1px #e5a1ba;
+    color: white;
+  }
+
+  #sell {
+    min-height: 40px;
+    width: 200px;
+    background: #027881;
+    color: white;
+  }
+}
+nav::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 100px;
+  z-index: 1000;
+  border-top: 1px solid black;
+}
+
+.heroe-container {
+  background-image: url("./assets/heroe_vinted.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.heroe-inside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: white;
+  height: 250px;
+  width: 400px;
+  top: 25%;
+  left: 5%;
+  color: black;
+
+  p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 0 20px;
+  }
+
+  #start-selling {
+    font-size: 1rem;
+    font-weight: bold;
+    width: 90%;
+    margin: 0 20px;
+    height: 40px;
+
+    background: #027881;
+    color: white;
+  }
+}
+
+.feed-actu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1280px;
+
+  .feed-actu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .feed-grid {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      align-items: center;
+
+      height: 500px;
+      width: 245px;
+
+      margin: 20px 0;
+
+      #product_image {
+        height: 340px;
+        width: 100%;
+      }
+
+      .feed-grid-details {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: left;
+
+        p {
+          margin: 0 5px;
+          font-size: 0.8rem;
+          color: grey;
+        }
+      }
+
+      .feed-grid-seller {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        #account_avatar {
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+        }
+
+        p {
+          display: flex;
+          justify-items: left;
+          padding: 0 20px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .button {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 950px) {
+  nav {
+    form {
+      .sortby-container {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  nav {
+    form {
+      display: none;
+    }
+  }
+}

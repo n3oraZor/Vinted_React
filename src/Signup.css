@@ -1,0 +1,77 @@
+.signup-container {
+  height: 100vh;
+  width: 1280px;
+
+  display: flex;
+  justify-content: center;
+
+  .signup-container-inside {
+    display: flex;
+    flex-direction: column;
+
+    .compte-existant {
+      color: red;
+      font-size: 0.8rem;
+    }
+
+    h1 {
+      padding: 20px 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        width: 360px;
+        height: 40px;
+        margin: 10px;
+        border: none;
+        border-bottom: solid 1px #fdd7da;
+      }
+
+      p {
+        width: 360px;
+        text-align: justify;
+        text-justify: inter-word;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .newsletter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 360px;
+
+    #newsletter {
+      margin: 20px 0;
+      width: 10%;
+      height: 30px;
+    }
+
+    h2 {
+      width: 90%;
+      font-size: 1rem;
+      letter-spacing: 1.6px;
+    }
+  }
+
+  #submit {
+    font-size: 1rem;
+    font-weight: bold;
+    width: 360px;
+    margin: 20px 20px;
+    height: 40px;
+    background: #027881;
+    color: white;
+  }
+
+  span {
+    color: #027881;
+    padding: 15px 0;
+  }
+}

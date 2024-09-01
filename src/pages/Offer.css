@@ -1,0 +1,129 @@
+.offer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: #ecedee;
+
+  img {
+    display: flex;
+    width: 300px;
+    height: auto;
+  }
+
+  .offer-container-inside {
+    display: flex;
+    flex-direction: row;
+    width: 1280px;
+
+    .offer-container-inside-left {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .offer-container-inside-right {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      padding: 0px 40px 40px 40px;
+
+      .center-container {
+        position: relative;
+
+        h3 {
+          font-size: 1.3rem;
+          font-weight: bold;
+          padding: 20px 0 0 40px;
+        }
+
+        .product-list {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+
+          line-height: 0px;
+
+          p {
+            width: 120px;
+          }
+
+          li {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            p {
+              width: 250px;
+            }
+          }
+        }
+      }
+
+      .center-container:after {
+        position: absolute;
+        width: 80%;
+        content: "";
+        left: 40px;
+        right: 0;
+        top: 280px;
+        z-index: 1000;
+        border-top: 0.5px solid lightgrey;
+      }
+
+      .center-container-down {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        height: 100px;
+        width: 420px;
+
+        h3 {
+          padding: 40px 0 0 40px;
+        }
+
+        p {
+          padding: 0 0 0 40px;
+          font-size: 1.2rem;
+          margin: 0;
+        }
+
+        .user-details {
+          display: flex;
+          flex-direction: row;
+          padding: 20px 40px;
+          align-items: center;
+
+          img {
+            height: 60px;
+            width: auto;
+            border-radius: 50px;
+          }
+        }
+
+        #buy {
+          background: #07b2ba;
+          color: white;
+          width: 350px;
+          margin: 0 0 0 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .offer-container {
+    img {
+      display: flex;
+      width: 200px;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+/* src/components/RangeSlider.css */
+.range-slider {
+  position: relative;
+  max-width: 100%;
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.range-track {
+  height: 6px;
+  border-radius: 3px;
+  width: 100%;
+  position: relative;
+  background: #027881;
+}
+
+.thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #027881;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.range-labels {
+  font-size: 14px;
+  color: #333;
+  height: 10px;
+  padding: 10px;
+
+  span {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 950px) {
+  .range-slider {
+    display: none;
+
+    
+  }
+}
