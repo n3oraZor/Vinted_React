@@ -6,7 +6,9 @@ const Home = ({ data }) => {
       <div className="heroe-container">
         <div className="heroe-inside">
           <p> Prêts à faire du tri dans vos placards ?</p>
-          <button id="start-selling">Commencez à vendre</button>
+          <Link to="/offer/publish">
+            <button id="start-selling">Commencez à vendre</button>
+          </Link>
         </div>
       </div>
       <div className="feed-actu-container">

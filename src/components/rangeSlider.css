@@ -1,11 +1,10 @@
 /* src/components/RangeSlider.css */
 .range-slider {
   position: relative;
-  max-width: 100%;
-  width: 300px;
-  height: 60px;
+  max-width: 200px;
+  width: 100vw;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +47,5 @@
 @media (max-width: 950px) {
   .range-slider {
     display: none;
-
-    
   }
 }

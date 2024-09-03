@@ -1,0 +1,137 @@
+.publish-page {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ecedee;
+}
+
+.publish-container {
+  max-width: 1280px;
+  min-height: 600px;
+
+  h2 {
+    width: 60vw;
+    max-width: 1280px;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .picture-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    .upload {
+      height: 100px;
+      width: 60vw;
+      max-width: 1280px;
+
+      border: dashed 1px lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      #file {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+
+      #file + label {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #027881;
+        border: solid 1px #027881;
+        background-color: white;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+
+      #name {
+        display: none;
+      }
+    }
+
+    img {
+      height: 400px;
+      max-width: auto;
+    }
+  }
+
+  .title-container,
+  .infos-container,
+  .price-container {
+    margin: 20px 0;
+    max-width: 1280px;
+    .int {
+      background: white;
+      display: flex;
+      flex-direction: row;
+      border: solid 0.5px lightgrey;
+
+      .int-left {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        height: 50px;
+
+        margin: 10px;
+
+        p {
+        }
+      }
+
+      .int-right {
+        display: flex;
+        align-items: center;
+        width: 60%;
+        height: 50px;
+        margin: 10px;
+
+        input,
+        textarea {
+          border: none;
+          border-bottom: solid 1px lightgrey;
+          width: 95%;
+          padding: 0 0 5px 0;
+
+          padding: 10px;
+        }
+
+        textarea {
+          height: 40px;
+        }
+
+        input::placeholder {
+          color: lightgray;
+        }
+        textarea::placeholder {
+          color: lightgray;
+        }
+      }
+    }
+  }
+
+  .sell-container {
+    display: flex;
+    justify-content: right;
+    margin: 30px 0;
+
+    button {
+      height: 40px;
+      width: 80px;
+      border-radius: 10px;
+      border: none;
+      background: #027881;
+      color: white;
+    }
+  }
+}

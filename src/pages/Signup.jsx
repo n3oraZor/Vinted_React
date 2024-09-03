@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
-
-
+import "./Signup.css";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -29,7 +28,7 @@ const Signup = () => {
       );
 
       //si ok voici le console.log // objet contenant mes données + token
-      console.log(response.data);
+      //console.log(response.data);
 
       //si retour ok on doit avoir le token dans reponse.data.token
       response.data.token &&
@@ -42,8 +41,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-container">
-      <div className="signup-container-inside">
+    <div className="sign-container">
+      <div className="sign-container-inside">
         <h1>S'inscrire</h1>
         <form onSubmit={postData}>
           <input
@@ -82,7 +81,7 @@ const Signup = () => {
             avoir au moins 18 ans.
           </p>
           {errorMessage && (
-            <div className="compte-existant">Le compte est déja existant</div>
+            <div className="erreur">Le compte est déja existant</div>
           )}
           <button type="submit" id="submit">
             S'inscrire

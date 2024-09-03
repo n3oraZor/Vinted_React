@@ -1,6 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import defaultavatar from "../assets/default-avatar.png";
+import "./Offer.css";
 
 const Offer = () => {
   const { id } = useParams(); // {id:"dfgjkdfgdfgdfkg"}
@@ -45,7 +47,7 @@ const Offer = () => {
               const key = keys[0];
 
               return (
-                <ul className="product-list">
+                <ul className="product-list" key={index}>
                   <p key={index}>{keys}</p>
                   <li>
                     <p>: {elem[key]}</p>
@@ -58,10 +60,22 @@ const Offer = () => {
             <h3>{data.product_name}</h3>
             <p>{data.product_description}</p>
             <div className="user-details">
-              <img src={data.owner.account.avatar.url} alt="username" />
+              {data.owner.account.avatar ? (
+                <img src={data.owner.account.avatar.secure_url} />
+              ) : (
+                <img src={defaultavatar} />
+              )}
               <p>{data.owner.account.username}</p>
             </div>
-            <button id="buy">Acheter</button>
+            <Link
+              to="/offer/payment"
+              state={{
+                title: data.product_name,
+                price: data.product_price.toFixed(2),
+              }}
+            >
+              <button id="buy">Acheter</button>
+            </Link>
           </div>
         </div>
       </div>

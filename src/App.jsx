@@ -1,20 +1,17 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Range } from "react-range";
 import Cookies from "js-cookie";
 import axios from "axios";
 import logovinted from "./assets/logo_vinted.svg";
-
 import Home from "../src/pages/Home";
 import Offer from "../src/pages/Offer";
 import Signup from "../src/pages/Signup";
 import Login from "../src/pages/Login";
+import Publish from "../src/pages/Publish";
+import Payment from "../src/pages/Payment";
 import RangeSlider from "./components/RangeSlider";
 
 import "./App.css";
-import "./Signup.css";
-import "./pages/Login.css";
-import "./pages/Offer.css";
 
 function App() {
   // state for API
@@ -26,7 +23,7 @@ function App() {
   const [priceRange, setPriceRange] = useState([]);
   const [sortOrder, setSortOrder] = useState("price-asc");
 
-  //Cookie management when user logoff
+  //logout et suppression cookie
   const removeCookies = () => {
     Cookies.remove("VintedLoggedCookie");
     location.reload();
@@ -55,11 +52,16 @@ function App() {
     fetchData();
   }, [search, priceRange, sortOrder]);
 
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    console.log(search);
+  };
+
   return isLoading ? (
     <p>Chargement en cours...</p>
   ) : (
     <Router>
-      <nav>
+      <nav className="navigation-bar">
         <Link to="/">
           <img src={logovinted} alt="logo-vinted" id="logo-vinted" />
         </Link>
@@ -69,12 +71,10 @@ function App() {
             name="search"
             id="search"
             placeholder="&#x1F50D; | Recherchez vos articles"
-            onKeyDown={(e) => {
-              e.key === "Enter" && setSearch(e.target.value);
-            }}
+            onChange={handleSearch}
           />
 
-          <RangeSlider min={0} max={1000} onRangeChange={setPriceRange} />
+          <RangeSlider min={0} max={100000} onRangeChange={setPriceRange} />
 
           <div className="sortby-container">
             <input
@@ -87,7 +87,7 @@ function App() {
                   : setSortOrder("price-asc");
               }}
             />
-            <label for="checkbox">Trier</label>
+            <label htmlFor="checkbox">Trier</label>
           </div>
         </form>
         {/* On verifie la présence du cookie pour modifier la navbar */}
@@ -107,7 +107,9 @@ function App() {
             </Link>
           </div>
         )}
-        <button id="sell">Vends tes articles</button>
+        <Link to="/offer/publish">
+          <button id="sell">Vends tes articles</button>
+        </Link>
       </nav>
 
       <Routes>
@@ -115,6 +117,8 @@ function App() {
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/user/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/offer/publish" element={<Publish />} />
+        <Route path="/offer/payment" element={<Payment />} />
       </Routes>
     </Router>
   );

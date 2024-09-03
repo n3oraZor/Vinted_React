@@ -1,21 +1,23 @@
-.signup-container {
+.sign-container {
   height: 100vh;
   width: 1280px;
 
   display: flex;
   justify-content: center;
 
-  .signup-container-inside {
+  .sign-container-inside {
     display: flex;
     flex-direction: column;
 
-    .compte-existant {
+    .erreur {
       color: red;
       font-size: 0.8rem;
     }
 
     h1 {
       padding: 20px 0;
+      font-size: 2rem;
+      font-weight: bold;
     }
 
     form {
@@ -48,7 +50,7 @@
     width: 360px;
 
     #newsletter {
-      margin: 20px 0;
+      margin: 20px 20px 20px 0;
       width: 10%;
       height: 30px;
     }

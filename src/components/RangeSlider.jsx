@@ -1,4 +1,3 @@
-// src/components/RangeSlider.jsx
 import React, { useState, useEffect } from "react";
 import { Range, getTrackBackground } from "react-range";
 import "./rangeSlider.css"; // Assurez-vous de définir le style pour le slider
@@ -32,15 +31,20 @@ const RangeSlider = ({ min, max, onRangeChange }) => {
               }),
             }}
           >
-            {children}
+            {React.Children.map(children, (child, index) =>
+              React.cloneElement(child, { key: index })
+            )}
           </div>
         )}
-        renderThumb={({ props, isDragged }) => (
-          <div
-            {...props}
-            className={`thumb ${isDragged ? "thumb-dragged" : ""}`}
-          />
-        )}
+        renderThumb={({ props, isDragged }) => {
+          const { key, ...restProps } = props;
+          return (
+            <div
+              {...restProps}
+              className={`thumb ${isDragged ? "thumb-dragged" : ""}`}
+            />
+          );
+        }}
       />
       <div className="range-labels">
         <span className="range-label-min">{values[0]}€</span>
