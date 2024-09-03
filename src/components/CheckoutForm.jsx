@@ -3,7 +3,7 @@ import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import axios from "axios";
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ title, price }) {
   //state de gestion du message d'erreur
   const [errorMessage, setErrorMessage] = useState("");
   //state pour la confirmation du paiement
@@ -43,7 +43,7 @@ export default function CheckoutForm() {
         }
       );
 
-      console.log(response.data.client_secret);
+      //console.log(response.data.client_secret);
       //on stocke dans une variable ce client secret
       const clientSecret = response.data.client_secret;
 

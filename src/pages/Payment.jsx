@@ -29,7 +29,7 @@ function Payment() {
         <h2>Montant à régler {price}€</h2>
       </div>
       <Elements stripe={stripePromise} options={options}>
-        <CheckoutForm />
+        <CheckoutForm title={title} price={price} />
       </Elements>
     </div>
   );
